@@ -1,15 +1,9 @@
-var express = require('express');
-var app = express();
-
-app.get('/', function (req, res) {
-    res.send('{ "response": "Welcome to IKS deployed via Terraform" }');
+const app = express();
+app.get('/', (req, res) => {
+res.send('Hello World');
 });
 
-app.get('/will', function (req, res) {
-    res.send('{ "response": "Hello World" }');
-});
-app.get('/ready', function (req, res) {
-    res.send('{ "response": " Great!, It works!" }');
-});
-app.listen(process.env.PORT || 3000);
-module.exports = app;
+const express = require('express');
+
+app.listen(8080, '0.0.0.0');
+console.log('Running on http://0.0.0.0:8080');
